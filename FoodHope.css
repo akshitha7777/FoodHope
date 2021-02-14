@@ -1,0 +1,145 @@
+body{
+    background: black;
+	font-family: "Roboto", sans-serif;
+}
+.puppy h2{
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 2.5rem;
+}
+.puppy2 h3{
+	color: #000000;
+	font-weight: 600;
+	font-size: 2.5rem;
+}
+.puppy2 h4{
+	color: #000000;
+	font-weight: normal;
+	font-size: 1.125rem;
+	line-height: 2;
+}
+.puppy p{
+	color: #ffffff;
+	font-weight: normal;
+	font-size: 1.125rem;
+	line-height: 2;
+}
+.puppy2 h2{
+	color: #222931;
+	font-weight: bold;
+	font-size: 2.5rem;
+}
+.puppy2 p{
+	color: #222931;
+	font-weight: normal;
+	font-size: 1.125rem;
+	line-height: 2;
+}
+.content{
+	margin-top: 100px;
+}
+#mainNavbar{
+	font-size: 1.5rem;
+	font-weight: 100;
+	background-color: #222931;
+
+}
+#mainNavbar .nav-link{
+    color:white;
+    
+}
+.theme1{
+	background: #222931;
+
+}
+.theme2{
+	background: #E5E5E5;
+
+}
+.theme3{
+	color: #ffffff;
+	font-weight: normal;
+}
+
+.content{
+	text-align: center;
+	padding-top: 5%;
+	padding-bottom:10%;
+	color: white;
+	text-decoration-style: bold;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+}
+hr{
+	width: 400px;
+    border-top: 1px solid #222931;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.hr1{
+    width: 400px;
+    border-top: 1px solid #ffffff;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.lead{
+	height: 72px;
+width: 512.4415893554688px;
+left: 147.55841064453125px;
+top: 898px;
+border-radius: 0px;
+
+}
+.sec{
+	padding-left: 800px;
+}
+.term{
+
+width: 565px;
+height: 72px;
+left: 171px;
+top: 1772px;
+}
+.b1{
+
+  margin-top: 5%;
+}
+.inputtext{
+
+
+align-items: center;
+padding: 10.8px 40px;
+background: #FFFFFF;
+border: 1px solid #FFFFFF;
+box-sizing: border-box;
+border-radius: 4px;
+}
+#hero{
+	background: url(https://c1.wallpaperflare.com/preview/137/340/9/connected-together-1child-wedding.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 750px;
+}
+#mainNavbar .nav-link:hover{
+	color: #EA1C2C;
+}
+#mainNavbar .navbar-brand{
+	color:#ffffff;
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+#headingGroup span{
+	color: #EA1C2C;
+}
+#headingGroup h1{
+	font-weight: 100;
+	font-size: 4rem;
+}
+.navbar.scrolled{
+	background: rgb(33, 33, 18);
+}
+@media (max-width: 1200px){
+	#headingGroup h1{
+	font-weight: 100;
+	font-size: 3rem;
+}
+
