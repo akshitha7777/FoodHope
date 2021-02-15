@@ -25,8 +25,10 @@ body
 	color: #EA1C2C;
 }
 #mainNavbar .navbar-brand{
-	color:#EA1C2C;
+	color:#ffffff;
 	font-size: 1.5rem;
+	font-weight: 400;
+
 }
 .nav-item{
 	font-family: Roboto;
@@ -71,4 +73,17 @@ span{
 .lists{
 	padding-top: 20px;
 	padding-left: 216px;
+}
+.theme1{
+	margin-top: 500px;
+	background: #222931;
+
+}
+.theme2{
+	background: #E5E5E5;
+
+}
+.theme3{
+	color: #ffffff;
+	font-weight: normal;
 }
