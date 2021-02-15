@@ -1,0 +1,74 @@
+body
+{	color:  #E5E5E5;
+	font-family: "Roboto", sans-serif;
+}
+.content{
+	margin-top: 100px;
+}
+.vl {
+    border: 1px solid #222931;
+    position: absolute;
+    left:9%; 
+    height: 500px;
+    padding-top: 234px;
+    
+}
+#mainNavbar{
+	font-size: 1.5rem;
+	font-weight: 100;
+	background-color: #222931;
+}
+#mainNavbar .nav-link{
+    color:white; 
+}
+#mainNavbar .nav-link:hover{
+	color: #EA1C2C;
+}
+#mainNavbar .navbar-brand{
+	color:#EA1C2C;
+	font-size: 1.5rem;
+}
+.nav-item{
+	font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+color: #FFFFFF;
+}
+h1{
+	font-family: Roboto;
+	text-align: left;
+font-style: normal;
+font-weight: bold;
+color: #222931;
+}
+.names{
+	font-style: normal;
+font-weight: 600;
+font-size: 18px;
+position: absolute;
+color: #222931;
+padding-left: 30px;
+}
+span{
+	font-size: 16px;
+	color: #222931;
+}
+.buttons{
+	padding-left: 600px;
+}
+.btn{
+    margin-left: 809px;
+    display: inline-block;
+    margin: 0 5px;
+    text-align: center;
+
+}
+
+#heading{
+	padding-top: 73px;
+	padding-left: 173px;
+}
+.lists{
+	padding-top: 20px;
+	padding-left: 216px;
+}
