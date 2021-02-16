@@ -1,0 +1,18 @@
+#modules
+node_modules/
+
+#secret
+secret.js
+
+#local env
+*.env
+
+#any compressed files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="FoodHope2.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<title>FoodHope</title>
+</head>
+<body onload="nearby()">
+  <script>
+  function nearby(){
+    $.ajax({
+      type: 'POST',
+      url: '/nearby',
+      dataType:'json',
+      success: function(response){
+        for(let i=0;i<5;i++){
+          $.ajax({
+            type: 'GET',
+            url : 'details&place_id='+response.results[i].place_id,
+            dataType: 'json',
+            success: function(details){
+              putDetails(details)
+            }
+          })
+        }
+      }
+    })
+  }
+  function putDetails(details){
+      if(details.result.website && details.result.formatted_phone_number){
+    document.getElementsByClassName('put-details')[0].innerHTML += '<div class="col-lg-12"><div id="heading2" class="text-white text-center d-none d-lg-block"><ul class="lists"><li class="names">'+details.result.name+'<br><span>'+details.result.formatted_address+'</span></li> <div class="buttons"><a class="btn btn-danger px-5 mt-2" href="tel:'+details.result.formatted_phone_number+'">Call Now</a><button type="button" class="btn btn-outline-success px-4 mt-2">Save to wishlist</button><a class="btn btn-outline-danger px-5 mt-2" href="'+details.result.website+'"" target="_blank" )>View Website</a></div></ol></div></div>'
+  }
+  else if(details.result.website && !details.result.formatted_phone_number){
+      document.getElementsByClassName('put-details')[0].innerHTML += '<div class="col-lg-12"><div id="heading2" class="text-white text-center d-none d-lg-block"><ul class="lists"><li class="names">'+details.result.name+'<br><span>'+details.result.formatted_address+'</span></li> <div class="buttons"><a class="btn btn-danger px-5 mt-2">No Phone Number</a><button type="button" class="btn btn-outline-success px-4 mt-2">Save to wishlist</button><a class="btn btn-outline-danger px-5 mt-2" href="' + details.result.website + '"" target="_blank" )>View Website</a></div></ol></div></div>'
+  }
+  else if(!details.result.website && details.result.formatted_phone_number){
+      document.getElementsByClassName('put-details')[0].innerHTML += '<div class="col-lg-12"><div id="heading2" class="text-white text-center d-none d-lg-block"><ul class="lists"><li class="names">'+details.result.name+'<br><span>'+details.result.formatted_address+'</span></li> <div class="buttons"><a class="btn btn-danger px-5 mt-2" href="tel:' + details.result.formatted_phone_number + '">Call Now</a><button type="button" class="btn btn-outline-success px-4 mt-2">Save to wishlist</button><a class="btn btn-outline-danger px-5 mt-2" )>No Website</a></div></ol></div></div>'
+  }
+  else{
+      document.getElementsByClassName('put-details')[0].innerHTML += '<div class="col-lg-12"><div id="heading2" class="text-white text-center d-none d-lg-block"><ul class="lists"><li class="names">'+details.result.name+'<br><span>'+details.result.formatted_address+'</span></li> <div class="buttons"><a class="btn btn-danger px-5 mt-2" >No Phone Number</a><button type="button" class="btn btn-outline-success px-4 mt-2">Save to wishlist</button><a class="btn btn-outline-danger px-5 mt-2")>No Website</a></div></ol></div></div>'
+  }
+}
+  </script>
+<nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md fixed-top">
+    <a href="#" class="navbar-brand">FOODHOPE</a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navLinks">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="" class="nav-link">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">TICKETS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <section id="section1" class="container-fluid px-0">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="content">
+                <div id="heading" class="text-white text-center d-none d-lg-block mt-5">
+                <h1>NGOs near me</h1>
+                </div>
+                </div>
+            </div>
+          </div>
+    </section>
+
+    <section id="section2" class="container-fluid px-0">
+         <div class="vl"></div>
+          <div class="row put-details">
+
+          </div>
+    </section>
+
+    <section class="theme1 container-fluid px-0 pt-5">
+                <div class="row align-items-center">
+            <div class="col-md-6 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-10 col-lg-8 puppy mb-5 mb-md-0 pb-5">
+                        <h2 style="padding-right: 200px">GET IN TOUCH</h2>
+                        <hr>
+
+                        <h4 class="theme3" style="text-align: left;padding-left: 40px">Contact Number</h4>
+                        <h4 class="theme3" style="text-align: left;padding-left: 40px">Email address</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-10 col-lg-8 puppy mb-5 mb-md-0 " style="padding-bottom: 90px;">
+                        <h2 style="padding-right: 170px">FOLLOW US</h2>
+                        <hr>
+
+                        <h4 class="theme3" style="text-align: left;padding-left: 80px">Social Media</h4>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="theme2">
+        <div class="text-center p-3 ">
+    PRIVACY POLICY .
+    <a  href="#">FOODHOPE</a>
+  </div>
+    </footer>
+
+
+</body>
+</html>
