@@ -17,15 +17,15 @@ app.use(express.static(__dirname + '/public'));
 var _location = ''
 
 app.get('/donate', (req,res,next)=>{
-  fetch('https://extreme-ip-lookup.com/json/')
+  var ip = (req.headers['x-forwarded-for'] || '').split(',').pop().trim() ||
+    req.connection.remoteAddress ||
+    req.socket.remoteAddress ||
+    req.connection.socket.remoteAddress;
+  fetch('https://extreme-ip-lookup.com/json/'+ip)
   .then( resp => resp.json())
   .then( async response => {
     //console.log(response);
-    var ip = (req.headers['x-forwarded-for'] || '').split(',').pop().trim() ||
-      req.connection.remoteAddress ||
-      req.socket.remoteAddress ||
-      req.connection.socket.remoteAddress;
-      console.log(ip);
+    //console.log(ip);
     let location = response.lat + ', ' + response.lon;
     _location = location
    })
