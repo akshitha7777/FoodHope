@@ -16,10 +16,11 @@ app.use(express.static(__dirname + '/public'));
 
 var _location = ''
 
-app.use('*', (req,res,next)=>{
+app.get('/donate', (req,res,next)=>{
   fetch('https://extreme-ip-lookup.com/json/')
-  .then( res => res.json())
+  .then( resp => resp.json())
   .then( async response => {
+    console.log(response);
     let location = response.lat + ', ' + response.lon;
     _location = location
    })
