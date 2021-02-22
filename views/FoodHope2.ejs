@@ -18,12 +18,26 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<title>FoodHope</title>
 </head>
-<body onload="nearby()">
+<body onload=" getLocation();">
   <script>
-  function nearby(){
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(nearby);
+            } else {
+                
+            }
+        }
+
+
+  function nearby(position){
     $.ajax({
       type: 'POST',
       url: '/nearby',
+      data: {
+          lat: position.coords.latitude,
+          lon: position.coords.longitude
+      } ,
       dataType:'json',
       success: function(response){
         for(let i=0;i<5;i++){

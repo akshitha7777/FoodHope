@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require("body-parser");
 const axios = require('axios')
 const fetch = require("node-fetch");
 const env = require("dotenv").config();
@@ -11,29 +12,33 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(__dirname + '/public'));
 
 var _location = ''
 
-app.get('/donate', (req,res,next)=>{
-  var ip = (req.headers['x-forwarded-for'] || '').split(',').pop().trim() ||
-    req.connection.remoteAddress ||
-    req.socket.remoteAddress ||
-    req.connection.socket.remoteAddress;
-  fetch('https://extreme-ip-lookup.com/json/'+ip)
-  .then( resp => resp.json())
-  .then( async response => {
-    console.log(response);
-    console.log(ip);
-    let location = response.lat + ', ' + response.lon;
-    _location = location
-   })
-   .catch((data, status) => {
-      console.log('Request failed');
-   })
-next();
-})
+// app.get('/donate', (req,res,next)=>{
+//   var ip = (req.headers['x-forwarded-for'] || '').split(',').pop().trim() ||
+//     req.connection.remoteAddress ||
+//     req.socket.remoteAddress ||
+//     req.connection.socket.remoteAddress;
+//   fetch('https://extreme-ip-lookup.com/json/'+ip)
+//   .then( resp => resp.json())
+//   .then( async response => {
+//     console.log(response);
+//     console.log(ip);
+//     let location = response.lat + ', ' + response.lon;
+//     _location = location
+//    })
+//    .catch((data, status) => {
+//       console.log('Request failed');
+//    })
+// next();
+// })
+
+
 app.get('/', (req,res) => {
     res.sendFile(__dirname + "/public/FoodHope.html");
 });
@@ -45,6 +50,8 @@ app.get('/donate', (req,res)=>{
 })
 
 app.post('/nearby', async (req,res)=>{
+  _location = req.body.lat + ', ' + req.body.lon;
+  console.log(_location);
   const {data} = await axios.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=ngo&location=${_location}&radius=10000&key=${key}`)
   res.json(data)
 })
