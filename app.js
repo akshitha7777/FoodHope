@@ -25,7 +25,7 @@ app.get('/donate', (req,res,next)=>{
   .then( resp => resp.json())
   .then( async response => {
     //console.log(response);
-    //console.log(ip);
+    console.log(ip);
     let location = response.lat + ', ' + response.lon;
     _location = location
    })
