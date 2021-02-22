@@ -18,7 +18,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<title>FoodHope</title>
 </head>
-<body onload=" getLocation();">
+<body onload="getLocation();">
   <script>
 
         function getLocation() {
@@ -58,13 +58,13 @@
     document.getElementsByClassName('put-details')[0].innerHTML += '<div class="col-lg-12"><div id="heading2" class="text-white text-center d-none d-lg-block"><ul class="lists"><li class="names">'+details.result.name+'<br><span>'+details.result.formatted_address+'</span></li> <div class="buttons"><a class="btn btn-danger px-5 mt-2" href="tel:'+details.result.formatted_phone_number+'">Call Now</a><button type="button" class="btn btn-outline-success px-4 mt-2">Save to wishlist</button><a class="btn btn-outline-danger px-5 mt-2" href="'+details.result.website+'"" target="_blank" )>View Website</a></div></ol></div></div>'
   }
   else if(details.result.website && !details.result.formatted_phone_number){
-      document.getElementsByClassName('put-details')[0].innerHTML += '<div class="col-lg-12"><div id="heading2" class="text-white text-center d-none d-lg-block"><ul class="lists"><li class="names">'+details.result.name+'<br><span>'+details.result.formatted_address+'</span></li> <div class="buttons"><a class="btn btn-danger px-5 mt-2">No Phone Number</a><button type="button" class="btn btn-outline-success px-4 mt-2">Save to wishlist</button><a class="btn btn-outline-danger px-5 mt-2" href="' + details.result.website + '"" target="_blank" )>View Website</a></div></ol></div></div>'
+      document.getElementsByClassName('put-details')[0].innerHTML += '<div class="col-lg-12"><div id="heading2" class="text-white text-center d-none d-lg-block"><ul class="lists"><li class="names">'+details.result.name+'<br><span>'+details.result.formatted_address+'</span></li> <div class="buttons"><a class="btn btn-danger px-5 mt-2">NA</a><button type="button" class="btn btn-outline-success px-4 mt-2">Save to wishlist</button><a class="btn btn-outline-danger px-5 mt-2" href="' + details.result.website + '"" target="_blank" )>View Website</a></div></ol></div></div>'
   }
   else if(!details.result.website && details.result.formatted_phone_number){
       document.getElementsByClassName('put-details')[0].innerHTML += '<div class="col-lg-12"><div id="heading2" class="text-white text-center d-none d-lg-block"><ul class="lists"><li class="names">'+details.result.name+'<br><span>'+details.result.formatted_address+'</span></li> <div class="buttons"><a class="btn btn-danger px-5 mt-2" href="tel:' + details.result.formatted_phone_number + '">Call Now</a><button type="button" class="btn btn-outline-success px-4 mt-2">Save to wishlist</button><a class="btn btn-outline-danger px-5 mt-2" )>No Website</a></div></ol></div></div>'
   }
   else{
-      document.getElementsByClassName('put-details')[0].innerHTML += '<div class="col-lg-12"><div id="heading2" class="text-white text-center d-none d-lg-block"><ul class="lists"><li class="names">'+details.result.name+'<br><span>'+details.result.formatted_address+'</span></li> <div class="buttons"><a class="btn btn-danger px-5 mt-2" >No Phone Number</a><button type="button" class="btn btn-outline-success px-4 mt-2">Save to wishlist</button><a class="btn btn-outline-danger px-5 mt-2")>No Website</a></div></ol></div></div>'
+      document.getElementsByClassName('put-details')[0].innerHTML += '<div class="col-lg-12"><div id="heading2" class="text-white text-center d-none d-lg-block"><ul class="lists"><li class="names">'+details.result.name+'<br><span>'+details.result.formatted_address+'</span></li> <div class="buttons"><a class="btn btn-danger px-5 mt-2" >NA</a><button type="button" class="btn btn-outline-success px-4 mt-2">Save to wishlist</button><a class="btn btn-outline-danger px-5 mt-2")>No Website</a></div></ol></div></div>'
   }
 }
   </script>
