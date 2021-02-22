@@ -2,6 +2,22 @@ body{
     background: black;
 	font-family: "Roboto", sans-serif;
 }
+#headingnames{
+	font-size: 26px;
+}
+#names1{
+	font-size: 20px;
+}
+#description{
+	font-size: 18px;
+}
+#profileimg{
+	width: 217px;
+height: 220px;
+left: 461px;
+top: 3014px;
+margin-bottom: 5px;
+}
 .puppy h2{
 	color: #ffffff;
 	font-weight: bold;
@@ -103,6 +119,20 @@ top: 1772px;
 
   margin-top: 5%;
 }
+#input1{
+	
+align-items: center;
+padding: 20px 30px;
+margin-top: 2px;
+margin-right: 10px;
+width: 303px;
+height: 49px;
+left: 466px;
+top: 483px;
+
+background: #FFFFFF;
+border-radius: 4px;
+}
 .inputtext{
 
 
@@ -114,7 +144,7 @@ box-sizing: border-box;
 border-radius: 4px;
 }
 #hero{
-	background: url(https://c1.wallpaperflare.com/preview/137/340/9/connected-together-1child-wedding.jpg);
+	background: url("https://www.mdidentity.com/wp-content/uploads/2016/03/cupped-hands.jpg");
 	background-size: cover;
 	background-position: center;
 	height: 750px;
