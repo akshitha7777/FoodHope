@@ -24,7 +24,7 @@ app.get('/donate', (req,res,next)=>{
   fetch('https://extreme-ip-lookup.com/json/'+ip)
   .then( resp => resp.json())
   .then( async response => {
-    //console.log(response);
+    console.log(response);
     console.log(ip);
     let location = response.lat + ', ' + response.lon;
     _location = location
