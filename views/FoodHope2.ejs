@@ -23,6 +23,7 @@
 
         function getLocation() {
             if (navigator.geolocation) {
+                console.log("HEROKU DEPLOYMENT");
                 navigator.geolocation.getCurrentPosition(nearby);
             } else {
                 
