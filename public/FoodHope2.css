@@ -5,6 +5,10 @@ body
 .content{
 	margin-top: 100px;
 }
+.put-details{
+	 max-width:900px;
+    word-wrap:break-word;
+}
 .vl {
     border: 1px solid #222931;
     position: absolute;
@@ -13,7 +17,7 @@ body
     padding-top: 234px;
      max-width:200px;
     word-wrap:break-word;
-    
+    text-align: left;
 }
 #mainNavbar{
 	font-size: 1.5rem;
@@ -59,14 +63,25 @@ span{
 }
 .buttons{
 	padding-left: 600px;
-}
+   
+ }
 .btn{
-    margin-left: 809px;
+    margin-left: 100px;
     display: inline-block;
-    margin: 0 5px;
     text-align: center;
+    width: 200px;
+ }
+ /*#button1{
+ 	display: inline-block;
+ 	
+ }
+ #button2{
+ 	display: inline-block;
 
-}
+ }
+ #button3{
+ 	display: inline-block;
+ }*/
 
 #heading{
 	padding-top: 73px;
