@@ -11,6 +11,8 @@ body
     left:9%; 
     height: 500px;
     padding-top: 234px;
+     max-width:200px;
+    word-wrap:break-word;
     
 }
 #mainNavbar{
